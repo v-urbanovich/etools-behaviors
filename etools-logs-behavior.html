@@ -1,0 +1,63 @@
+<script>
+  (function(window) {
+    'use strict';
+
+    function defineEtoolsLogs() {
+      var etoolsLogs = {
+
+        properties: {
+          /**
+           * Available log levels:
+           *    OFF
+           *    ERROR
+           *    WARN
+           *    INFO
+           */
+          etoolsLogsLevel: {
+            type: String,
+            value: function() {
+              var availableLogLevels = ['OFF', 'ERROR', 'WARN', 'INFO'];
+              if (window.EtoolsLogsLevel && availableLogLevels.indexOf(window.EtoolsLogsLevel) === -1) {
+                // wrong log level set
+                return 'OFF';
+              }
+              return window.EtoolsLogsLevel || 'OFF';
+            }
+          }
+        },
+
+        _getEtoolsLogMessages: function(logPrefix, message, messagePrefix) {
+          var msg = '[' + logPrefix;
+          if (messagePrefix) {
+            msg += ' - ' + messagePrefix.toString();
+          }
+          msg += '] ' + message;
+          return msg;
+        },
+
+        logError: function(message, messagePrefix, other) {
+          if (['ERROR', 'WARN', 'INFO'].indexOf(this.etoolsLogsLevel) > -1) {
+            console.error(this._getEtoolsLogMessages('ERROR', message, messagePrefix), other ? other : '');
+          }
+        },
+
+        logWarn: function(message, messagePrefix, other) {
+          if (['WARN', 'INFO'].indexOf(this.etoolsLogsLevel) > -1) {
+            console.warn(this._getEtoolsLogMessages('WARN', message, messagePrefix), other ? other : '');
+          }
+        },
+
+        logInfo: function(message, messagePrefix, other) {
+          if ('INFO' === this.etoolsLogsLevel) {
+            console.log(this._getEtoolsLogMessages('INFO', message, messagePrefix), other ? other : '');
+          }
+        }
+      };
+      return etoolsLogs;
+    }
+
+    /** @polymerBehavior EtoolsLogsBehavior */
+    window.EtoolsLogsBehavior = window.EtoolsLogsBehavior || defineEtoolsLogs();
+  })(window);
+</script>
+

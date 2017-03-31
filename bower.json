@@ -1,6 +1,8 @@
 {
   "name": "etools-behaviors",
   "description": "Common behaviors",
+  "version": "1.0.0",
+  "license": "https://github.com/unicef-polymer/etools-behaviors/blob/master/LICENSE.md",
   "main": "etools-behaviors-demo-helper",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"

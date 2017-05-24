@@ -37,19 +37,19 @@
 
         logError: function(message, messagePrefix, other) {
           if (['ERROR', 'WARN', 'INFO'].indexOf(this.etoolsLogsLevel) > -1) {
-            console.error(this._getEtoolsLogMessages('ERROR', message, messagePrefix), other ? other : '');
+            console.error(this._getEtoolsLogMessages('ERROR', message, messagePrefix), other ? other : ''); // eslint-disable-line
           }
         },
 
         logWarn: function(message, messagePrefix, other) {
           if (['WARN', 'INFO'].indexOf(this.etoolsLogsLevel) > -1) {
-            console.warn(this._getEtoolsLogMessages('WARN', message, messagePrefix), other ? other : '');
+            console.warn(this._getEtoolsLogMessages('WARN', message, messagePrefix), other ? other : ''); // eslint-disable-line
           }
         },
 
         logInfo: function(message, messagePrefix, other) {
           if ('INFO' === this.etoolsLogsLevel) {
-            console.log(this._getEtoolsLogMessages('INFO', message, messagePrefix), other ? other : '');
+            console.log(this._getEtoolsLogMessages('INFO', message, messagePrefix), other ? other : ''); // eslint-disable-line
           }
         }
       };

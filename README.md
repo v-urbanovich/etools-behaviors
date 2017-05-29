@@ -37,6 +37,22 @@ TODO: add other behaviors from PMP App
 $ bower install --save etools-behaviors
 ```
 
+## Linting the code
+
+Innstall local npm packages (run `npm install`)
+Then just run the linting task
+
+```bash
+$ npm run lint
+```
+You should also use polylint. If you don't have Polylint installed run `npm install -g polylint`.
+Then just run the linter on each file you wish to check like so
+
+```bash
+$ polylint -i filename.html
+```
+At the moment polylint crashes if it encounters a missing import. If that happens, temporarily comment out such imports and run the command again.
+
 ## Preview element locally
 
 Install needed dependencies by running: `$ bower install`.
@@ -48,7 +64,7 @@ You need to have `web-component-tester` installed (if not run `npm install -g we
 ```bash
 $ wct
 ```
-or 
+or
 ```bash
 $ wct -p
 ```

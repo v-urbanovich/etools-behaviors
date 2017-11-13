@@ -3,7 +3,7 @@
     'use strict';
 
     function defineEtoolsLogs() {
-      var etoolsLogs = {
+      let etoolsLogs = {
 
         properties: {
           /**
@@ -15,40 +15,55 @@
            */
           etoolsLogsLevel: {
             type: String,
-            value: function() {
-              var availableLogLevels = ['OFF', 'ERROR', 'WARN', 'INFO'];
-              if (window.EtoolsLogsLevel && availableLogLevels.indexOf(window.EtoolsLogsLevel) === -1) {
-                // wrong log level set
-                return 'OFF';
-              }
-              return window.EtoolsLogsLevel || 'OFF';
-            }
+            value: ''
           }
+        },
+
+        _getLogLevel: function() {
+          let availableLogLevels = ['OFF', 'ERROR', 'WARN', 'INFO'];
+          if (window.EtoolsLogsLevel && availableLogLevels.indexOf(window.EtoolsLogsLevel) === -1) {
+            // wrong log level set
+            return 'OFF';
+          }
+          return window.EtoolsLogsLevel || 'OFF';
+        },
+
+        _initAndGetLogLevel: function(forceLevelInit) {
+          if (!this.etoolsLogsLevel || forceLevelInit) {
+            this.etoolsLogsLevel = this._getLogLevel();
+          }
+          return this.etoolsLogsLevel;
         },
 
         _getEtoolsLogMessages: function(logPrefix, message, messagePrefix) {
-          var msg = '[' + logPrefix;
+          let currentElementName = this.is ? ('[' + this.is + ']') : '';
+
+          let msg = '[' + logPrefix + ']' + currentElementName;
           if (messagePrefix) {
-            msg += ' - ' + messagePrefix.toString();
+            msg += '[' + messagePrefix.toString() + '] ';
           }
-          msg += '] ' + message;
+          msg += message;
           return msg;
         },
 
-        logError: function(message, messagePrefix, other) {
-          if (['ERROR', 'WARN', 'INFO'].indexOf(this.etoolsLogsLevel) > -1) {
+        _canLog: function(levels, forceLevelInit) {
+          return levels.indexOf(this._initAndGetLogLevel(forceLevelInit)) > -1;
+        },
+
+        logError: function(message, messagePrefix, other, forceLevelInit) {
+          if (this._canLog(['ERROR', 'WARN', 'INFO'], forceLevelInit)) {
             console.error(this._getEtoolsLogMessages('ERROR', message, messagePrefix), other ? other : ''); // eslint-disable-line
           }
         },
 
-        logWarn: function(message, messagePrefix, other) {
-          if (['WARN', 'INFO'].indexOf(this.etoolsLogsLevel) > -1) {
+        logWarn: function(message, messagePrefix, other, forceLevelInit) {
+          if (this._canLog(['WARN', 'INFO'], forceLevelInit)) {
             console.warn(this._getEtoolsLogMessages('WARN', message, messagePrefix), other ? other : ''); // eslint-disable-line
           }
         },
 
-        logInfo: function(message, messagePrefix, other) {
-          if ('INFO' === this.etoolsLogsLevel) {
+        logInfo: function(message, messagePrefix, other, forceLevelInit) {
+          if (this._canLog(['INFO'], forceLevelInit)) {
             console.log(this._getEtoolsLogMessages('INFO', message, messagePrefix), other ? other : ''); // eslint-disable-line
           }
         }

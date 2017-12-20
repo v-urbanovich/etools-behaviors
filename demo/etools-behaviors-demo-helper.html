@@ -1,0 +1,24 @@
+<link rel="import" href="../etools-logs-mixin.html">
+<link rel="import" href="../../polymer/polymer-element.html">
+
+
+<dom-module id="etools-behaviors-demo-helper">
+  <template>
+    <div style="width:100%; padding:30px;text-align:center;">
+      <h3>Check browser console</h3>
+    </div>
+  </template>
+  <script>
+    class EtoolsBehaviorsDemoHelper extends EtoolsLogsMixin(Polymer.Element) {
+      static get is() { return 'etools-behaviors-demo-helper'; }
+
+      ready() {
+        super.ready();
+          this.logError('some error msg...', null, {someObjProp: 'some data value'});
+          this.logWarn('some warning msg...', 'some page section', {someObjProp: 'some data value'});
+          this.logInfo('some info msg...', null, {someObjProp: 'some data value'})
+      }
+    }
+    customElements.define(EtoolsBehaviorsDemoHelper.is, EtoolsBehaviorsDemoHelper);
+  </script>
+</dom-module>

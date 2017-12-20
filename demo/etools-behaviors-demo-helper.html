@@ -20,5 +20,31 @@
       }
     }
     customElements.define(EtoolsBehaviorsDemoHelper.is, EtoolsBehaviorsDemoHelper);
+
   </script>
 </dom-module>
+
+<dom-module id="demo-mixin-factory">
+    <template>
+      <div style="width:100%; padding:30px;text-align:center;">
+        <h3>Check browser console</h3>
+      </div>
+    </template>
+    <script>
+      /*
+      *@ignore
+      */
+      class DemoMixinFactory extends EtoolsMixinFactory.combineMixins([EtoolsLogsMixin], Polymer.Element) {
+        static get is() { return 'demo-mixin-factory'; }
+
+        ready() {
+          super.ready();
+          this.logError('some error msg...', null, {someObjProp: 'some data value'});
+          this.logWarn('some warning msg...', 'some page section', {someObjProp: 'some data value'});
+          this.logInfo('some info msg...', null, {someObjProp: 'some data value'})
+        }
+      }
+      customElements.define(DemoMixinFactory.is, DemoMixinFactory);
+    </script>
+  </dom-module>
+

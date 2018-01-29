@@ -5,7 +5,8 @@
   "license": "https://github.com/unicef-polymer/etools-behaviors/blob/master/LICENSE.md",
   "main": "etools-behaviors-demo-helper",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "dexie": "^2.0.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^3.0.0",

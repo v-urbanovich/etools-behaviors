@@ -11,6 +11,9 @@
         mixinsArray.reverse();
         let compositeMixin = null;
         mixinsArray.forEach((m) => {
+          if (!m) {
+            throw new Error('[PolymerMixinFactory] mixinsArray contains invalid mixins (null|undefined)!');
+          }
           if (!compositeMixin) {
             // start by using PolymerElement as mixins superClass
             compositeMixin = m(superClass);

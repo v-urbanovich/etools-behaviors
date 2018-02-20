@@ -1,4 +1,3 @@
-<link rel="import" href="scripts/dexie.html">
 <link rel="import" href="etools-logs-mixin.html">
 <script>
   /*
@@ -28,6 +27,10 @@
     }
 
     refresh() {
+      if (!Dexie) {
+         this.logError('Dexie not imported', 'etools-page-refresh-mixin');
+      }
+
       this.refreshInProgress = true;
       // **Important : Do not clear localStorage before Dexie db ,
       // because for Firefox, IE, Edge and Safari, Dexie stores the db names

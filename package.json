@@ -1,5 +1,5 @@
 {
-  "name": "etools-dialog",
+  "name": "etools-behaviors",
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.0",

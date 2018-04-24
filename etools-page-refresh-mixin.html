@@ -6,7 +6,8 @@
    * @mixinFunction
    * @appliesMixin EtoolsLogsMixin
    */
-  EtoolsPageRefreshMixin = Polymer.dedupingMixin((superClass) => class extends EtoolsLogsMixin(superClass) {
+  const EtoolsPageRefreshMixin = Polymer.dedupingMixin( // eslint-disable-line
+      superClass => class extends EtoolsLogsMixin(superClass) {
 
     static get properties() {
       return {
@@ -27,8 +28,8 @@
     }
 
     refresh() {
-      if (!Dexie) {
-         this.logError('Dexie not imported', 'etools-page-refresh-mixin');
+      if (!Dexie) { // eslint-disable-line
+        this.logError('Dexie not imported', 'etools-page-refresh-mixin');
       }
 
       this.refreshInProgress = true;
@@ -61,9 +62,8 @@
       // eslint-disable-next-line no-undef
       let db = new Dexie(dbName);
       db.delete().catch(function(err) {
-        // eslint-disable-next-line no-console
         this.logError('Could not delete indexedDB: ' + dbName, 'etools-page-refresh-mixin', err, true);
-      }).finally(function() {
+      }.bind(this)).finally(function() {
         this.push('dbsAttemptedToDelete', dbName);
       }.bind(this));
     }

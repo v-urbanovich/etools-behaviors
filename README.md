@@ -3,11 +3,10 @@
 A collection of Polymer behaviors used in etools apps.
 
 ## Behaviors list
-### EtoolsLogsBehavior
+### EtoolsLogsMixin
 
 Can be used to log errors, warnings and other info like this.
 ```javascript
-behaviors: [EtoolsLogsBehavior],
 
 this.logError('some error msg...', null);
 this.logWarn('some warning msg...', 'some page section');
@@ -30,7 +29,6 @@ To configure the logging level in your app config do this:
 window.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';
 ```
 
-TODO: add other behaviors from PMP App
 
 ## Install
 ```bash

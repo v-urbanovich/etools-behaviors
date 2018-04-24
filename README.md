@@ -1,13 +1,12 @@
-# Etools Polymer Behaviors
+# Etools Polymer Mixins
 
-A collection of Polymer behaviors used in etools apps.
+A collection of Polymer mixins used in etools apps.
 
-## Behaviors list
+## Mixins list/ Mixin helpers
 ### EtoolsLogsMixin
 
 Can be used to log errors, warnings and other info like this.
 ```javascript
-
 this.logError('some error msg...', null);
 this.logWarn('some warning msg...', 'some page section');
 this.logInfo('some info msg...', null)
@@ -29,6 +28,13 @@ To configure the logging level in your app config do this:
 window.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';
 ```
 
+### PolymerMixinFactory
+
+A helper class to combine multiple mixins.
+
+### EtoolsPageRefreshMixin
+
+App data cache reset mixin.
 
 ## Install
 ```bash

@@ -1,27 +1,6 @@
 import { dedupingMixin } from '@polymer/polymer/lib/utils/mixin.js';
-/**
- * Can be used to log errors, warnings and other info like this.
- *
- * Each method can have 3 args:
- * - the message you want to log
- * - a prefix for log message
- * - additional data, anything
- *
- * ## Available logging levels (the levels are cumulative)
- * - OFF (default)
- * - ERROR - only errors will be displayed
- * - WARN - errors and warning will be displayed
- * - INFO - errors, warning and info logs displayed
 
- * To configure the logging level in your app config do this:
- * window.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';
- *
- * @polymer
- * @mixinFunction
- * @demo demo/demo-logs.html
- *
- */
-const EtoolsLogsMixin = dedupingMixin(baseClass => class extends baseClass { // eslint-disable-line
+let internalEtoolsLogsMixin = baseClass => class extends baseClass { // eslint-disable-line
 
   static get properties() {
     return {
@@ -90,4 +69,28 @@ const EtoolsLogsMixin = dedupingMixin(baseClass => class extends baseClass { // 
       console.log(this._getEtoolsLogMessages('INFO', message, messagePrefix), other ? other : '');
     }
   }
-});
+}
+
+/**
+ * Can be used to log errors, warnings and other info like this.
+ *
+ * Each method can have 3 args:
+ * - the message you want to log
+ * - a prefix for log message
+ * - additional data, anything
+ *
+ * ## Available logging levels (the levels are cumulative)
+ * - OFF (default)
+ * - ERROR - only errors will be displayed
+ * - WARN - errors and warning will be displayed
+ * - INFO - errors, warning and info logs displayed
+ *
+ * To configure the logging level in your app config do this:
+ * window.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';
+ *
+ * @polymer
+ * @mixinFunction
+ * @demo demo/demo-logs.html
+ */
+ const EtoolsLogsMixin = dedupingMixin(internalEtoolsLogsMixin);
+ export default EtoolsLogsMixin;

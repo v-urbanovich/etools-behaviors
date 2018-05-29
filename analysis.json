@@ -1,3 +1,604 @@
 {
-  "schema_version": "1.0.0"
+  "schema_version": "1.0.0",
+  "mixins": [
+    {
+      "description": "Can be used to log errors, warnings and other info like this.\n\nEach method can have 3 args:\n- the message you want to log\n- a prefix for log message\n- additional data, anything\n\n## Available logging levels (the levels are cumulative)\n- OFF (default)\n- ERROR - only errors will be displayed\n- WARN - errors and warning will be displayed\n- INFO - errors, warning and info logs displayed\n\nTo configure the logging level in your app config do this:\nwindow.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';",
+      "summary": "",
+      "path": "etools-logs-mixin.js",
+      "properties": [],
+      "methods": [],
+      "staticMethods": [],
+      "demos": [
+        {
+          "url": "demo/demo-logs.html",
+          "description": ""
+        }
+      ],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 94,
+          "column": 7
+        },
+        "end": {
+          "line": 94,
+          "column": 70
+        }
+      },
+      "privacy": "public",
+      "name": "EtoolsLogsMixin",
+      "attributes": [],
+      "events": [],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": []
+    }
+  ],
+  "classes": [
+    {
+      "description": "",
+      "summary": "",
+      "path": "etools-logs-mixin.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "_getLogLevel",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 20,
+              "column": 2
+            },
+            "end": {
+              "line": 27,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_initAndGetLogLevel",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 29,
+              "column": 2
+            },
+            "end": {
+              "line": 34,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "forceLevelInit"
+            }
+          ]
+        },
+        {
+          "name": "_getEtoolsLogMessages",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 36,
+              "column": 2
+            },
+            "end": {
+              "line": 45,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "logPrefix"
+            },
+            {
+              "name": "message"
+            },
+            {
+              "name": "messagePrefix"
+            }
+          ]
+        },
+        {
+          "name": "_canLog",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 47,
+              "column": 2
+            },
+            "end": {
+              "line": 49,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "levels"
+            },
+            {
+              "name": "forceLevelInit"
+            }
+          ]
+        },
+        {
+          "name": "logError",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 51,
+              "column": 2
+            },
+            "end": {
+              "line": 56,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "message"
+            },
+            {
+              "name": "messagePrefix"
+            },
+            {
+              "name": "other"
+            },
+            {
+              "name": "forceLevelInit"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "logWarn",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 58,
+              "column": 2
+            },
+            "end": {
+              "line": 63,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "message"
+            },
+            {
+              "name": "messagePrefix"
+            },
+            {
+              "name": "other"
+            },
+            {
+              "name": "forceLevelInit"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "logInfo",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 65,
+              "column": 2
+            },
+            "end": {
+              "line": 70,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "message"
+            },
+            {
+              "name": "messagePrefix"
+            },
+            {
+              "name": "other"
+            },
+            {
+              "name": "forceLevelInit"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 2,
+          "column": 43
+        },
+        "end": {
+          "line": 71,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "baseClass"
+    },
+    {
+      "description": "\r\nCached page data refresh helper functionality",
+      "summary": "",
+      "path": "etools-page-refresh-mixin.js",
+      "properties": [
+        {
+          "name": "dexieDbsNumber",
+          "type": "number | null | undefined",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 13,
+              "column": 6
+            },
+            "end": {
+              "line": 13,
+              "column": 28
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Number"
+            }
+          }
+        },
+        {
+          "name": "dbsAttemptedToDelete",
+          "type": "Array | null | undefined",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 14,
+              "column": 6
+            },
+            "end": {
+              "line": 14,
+              "column": 33
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Array"
+            }
+          }
+        },
+        {
+          "name": "refreshInProgress",
+          "type": "boolean | null | undefined",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 6
+            },
+            "end": {
+              "line": 15,
+              "column": 32
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "ready",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 23,
+              "column": 2
+            },
+            "end": {
+              "line": 27,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "refresh",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 29,
+              "column": 2
+            },
+            "end": {
+              "line": 41,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "clearLocalStorage",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 43,
+              "column": 2
+            },
+            "end": {
+              "line": 45,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "clearDexieDbs",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 47,
+              "column": 2
+            },
+            "end": {
+              "line": 58,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "deleteDexieDb",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 60,
+              "column": 2
+            },
+            "end": {
+              "line": 68,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "dbName"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_refreshPage",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 70,
+              "column": 2
+            },
+            "end": {
+              "line": 73,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "_triggerPageRefresh",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 75,
+              "column": 2
+            },
+            "end": {
+              "line": 91,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "deleteAttempts"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 93,
+          "column": 3
+        }
+      },
+      "privacy": "public",
+      "name": "EtoolsPageRefreshMixin",
+      "attributes": [
+        {
+          "name": "dexie-dbs-number",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 13,
+              "column": 6
+            },
+            "end": {
+              "line": 13,
+              "column": 28
+            }
+          },
+          "metadata": {},
+          "type": "number | null | undefined"
+        },
+        {
+          "name": "dbs-attempted-to-delete",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 14,
+              "column": 6
+            },
+            "end": {
+              "line": 14,
+              "column": 33
+            }
+          },
+          "metadata": {},
+          "type": "Array | null | undefined"
+        },
+        {
+          "name": "refresh-in-progress",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 15,
+              "column": 6
+            },
+            "end": {
+              "line": 15,
+              "column": 32
+            }
+          },
+          "metadata": {},
+          "type": "boolean | null | undefined"
+        }
+      ],
+      "events": [],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "mixins": [
+        "EtoolsLogsMixin"
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "description": "Offers easier syntax for applying multiple mixins",
+      "summary": "",
+      "path": "etools-mixin-factory.js",
+      "properties": [],
+      "methods": [
+        {
+          "name": "combineMixins",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 4,
+              "column": 2
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "mixinsArray"
+            },
+            {
+              "name": "superClass"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [
+        {
+          "url": "demo/demo-mixin-factory.html",
+          "description": ""
+        },
+        {
+          "url": "demo/demo-mixin-factory.html",
+          "description": ""
+        }
+      ],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 3,
+          "column": 7
+        },
+        "end": {
+          "line": 24,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "name": "EtoolsMixinFactory"
+    }
+  ]
 }

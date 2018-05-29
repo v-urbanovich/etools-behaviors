@@ -1,14 +1,18 @@
-<link rel="import" href="../etools-logs-mixin.html">
-<link rel="import" href="../../polymer/polymer-element.html">
-<link rel="import" href="../etools-mixin-factory.html">
-<link rel="import" href="etools-behaviors-demo-helper.html">
+<!--<script type="module" src="../etools-logs-mixin.js"></script>-->
+<!--<script type="module" src="@polymer/polymer/polymer-element.js"></script>-->
+<!--<script type="module" src="../etools-mixin-factory.js"></script>-->
+<!--<script type="module" src="./etools-behaviors-demo-helper.js"></script>-->
 
 <html>
     <header>
-      <script>
-        // config script
-        window.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';
-      </script>
+      <script type="module">
+import '../etools-logs-mixin.js';
+import '@polymer/polymer/polymer-element.js';
+import '../etools-mixin-factory.js';
+import './etools-behaviors-demo-helper.js';
+// config script
+window.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';
+</script>
     </header>
     <body>
       <demo-mixin-factory></demo-mixin-factory>

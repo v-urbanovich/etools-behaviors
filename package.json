@@ -24,6 +24,7 @@
   },
   "license": "https://github.com/unicef-polymer/etools-behaviors/blob/master/LICENSE.md",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "emoji": "^0.3.2"
   }
 }

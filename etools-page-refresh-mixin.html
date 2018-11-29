@@ -61,11 +61,22 @@
     deleteDexieDb(dbName) {
       // eslint-disable-next-line no-undef
       let db = new Dexie(dbName);
+      let finished = false;
+
       db.delete().catch(function(err) {
         this.logError('Could not delete indexedDB: ' + dbName, 'etools-page-refresh-mixin', err, true);
       }.bind(this)).finally(function() {
         this.push('dbsAttemptedToDelete', dbName);
+        finished = true;
       }.bind(this));
+
+      // *In Edge - catch and finally of db.delete() are not executed,
+      //            when the site is opened in more than one tab
+      setTimeout(() => {
+        if (!finished) {
+          alert("Please close any other tabs, that have this page open, for the Refresh to work properly.");
+       }
+      }, 9000);
     }
 
     _refreshPage() {

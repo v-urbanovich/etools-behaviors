@@ -23,5 +23,7 @@ class PolymerMixinFactory {
     return compositeMixin;
   }
 }
-const EtoolsMixinFactory = new PolymerMixinFactory();
-export default EtoolsMixinFactory;
+
+window.EtoolsMixins = window.EtoolsMixins || {};
+
+EtoolsMixins.EtoolsMixinFactory = new PolymerMixinFactory();

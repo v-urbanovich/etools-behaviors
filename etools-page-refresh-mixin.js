@@ -1,13 +1,13 @@
-import EtoolsLogsMixin from './etools-logs-mixin.js';
-import { dedupingMixin } from '@polymer/polymer/lib/utils/mixin.js';
+import './etools-logs-mixin.js';
+import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
 /*
  * Cached page data refresh helper functionality
  * @polymer
  * @mixinFunction
- * @appliesMixin EtoolsLogsMixin
+ * @applies EtoolsMixins.EtoolsLogsMixin
  */
 const EtoolsPageRefreshMixin = dedupingMixin(
-    superClass => class extends EtoolsLogsMixin(superClass) {
+    superClass => class extends EtoolsMixins.EtoolsLogsMixin(superClass) {
 
   static get properties() {
     return {
@@ -93,3 +93,6 @@ const EtoolsPageRefreshMixin = dedupingMixin(
 
 });
 
+window.EtoolsMixins = window.EtoolsMixins || {};
+
+EtoolsMixins.EtoolsPageRefreshMixin = EtoolsPageRefreshMixin;

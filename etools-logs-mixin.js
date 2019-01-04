@@ -92,5 +92,7 @@ let internalEtoolsLogsMixin = baseClass => class extends baseClass { // eslint-d
  * @mixinFunction
  * @demo demo/demo-logs.html
  */
- const EtoolsLogsMixin = dedupingMixin(internalEtoolsLogsMixin);
- export default EtoolsLogsMixin;
+
+window.EtoolsMixins = window.EtoolsMixins || {};
+
+EtoolsMixins.EtoolsLogsMixin = dedupingMixin(internalEtoolsLogsMixin);

@@ -24,6 +24,4 @@ class PolymerMixinFactory {
   }
 }
 
-window.EtoolsMixins = window.EtoolsMixins || {};
-
-EtoolsMixins.EtoolsMixinFactory = new PolymerMixinFactory();
+export const EtoolsMixinFactory = new PolymerMixinFactory();

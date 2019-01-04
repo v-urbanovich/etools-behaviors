@@ -4,10 +4,10 @@ import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
  * Cached page data refresh helper functionality
  * @polymer
  * @mixinFunction
- * @applies EtoolsMixins.EtoolsLogsMixin
+ * @applies EtoolsLogsMixin
  */
-const EtoolsPageRefreshMixin = dedupingMixin(
-    superClass => class extends EtoolsMixins.EtoolsLogsMixin(superClass) {
+export const EtoolsPageRefreshMixin = dedupingMixin(
+    superClass => class extends EtoolsLogsMixin(superClass) {
 
   static get properties() {
     return {
@@ -92,7 +92,3 @@ const EtoolsPageRefreshMixin = dedupingMixin(
   }
 
 });
-
-window.EtoolsMixins = window.EtoolsMixins || {};
-
-EtoolsMixins.EtoolsPageRefreshMixin = EtoolsPageRefreshMixin;

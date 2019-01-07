@@ -6,7 +6,7 @@ import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
  * @mixinFunction
  * @applies EtoolsLogsMixin
  */
-export const EtoolsPageRefreshMixin = dedupingMixin(
+const EtoolsPageRefreshMixin = dedupingMixin(
     superClass => class extends EtoolsLogsMixin(superClass) {
 
   static get properties() {
@@ -102,3 +102,5 @@ export const EtoolsPageRefreshMixin = dedupingMixin(
   }
 
 });
+
+export default EtoolsPageRefreshMixin;

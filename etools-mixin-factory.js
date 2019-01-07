@@ -30,4 +30,5 @@ class PolymerMixinFactory {
  * @mixinFunction
  * @demo demo/index.html
  */
-export const EtoolsMixinFactory = new PolymerMixinFactory();
+const EtoolsMixinFactory = new PolymerMixinFactory();
+export default EtoolsMixinFactory;

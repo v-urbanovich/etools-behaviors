@@ -1,8 +1,8 @@
-import {EtoolsLogsMixin} from '../etools-logs-mixin.js';
-import {EtoolsMixinFactory} from '../etools-mixin-factory.js';
+import EtoolsLogsMixin from '../etools-logs-mixin.js';
+import EtoolsMixinFactory from '../etools-mixin-factory.js';
 
 // page refresh mixin is included here only to be seen by polymer analyzer and add it to demo interface
-import {EtoolsPageRefreshMixin} from '../etools-page-refresh-mixin.js';
+import EtoolsPageRefreshMixin from '../etools-page-refresh-mixin.js';
 
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 

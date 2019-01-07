@@ -19,9 +19,8 @@ import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
  *
  * @polymer
  * @mixinFunction
- * @demo demo/demo-logs.html
+ * @demo demo/index.html
  */
-
 export const EtoolsLogsMixin = dedupingMixin(baseClass => class extends baseClass {
 
   static get properties() {

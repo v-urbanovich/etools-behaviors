@@ -1,6 +1,3 @@
-/* Offers easier syntax for applying multiple mixins
-* @demo demo/demo-mixin-factory.html
-*/
 class PolymerMixinFactory {
   combineMixins(mixinsArray, superClass) {
     if (mixinsArray instanceof Array === false) {
@@ -24,4 +21,10 @@ class PolymerMixinFactory {
   }
 }
 
+/**
+ * Offers easier syntax for applying multiple mixins
+ * @polymer
+ * @mixinFunction
+ * @demo demo/index.html
+ */
 export const EtoolsMixinFactory = new PolymerMixinFactory();

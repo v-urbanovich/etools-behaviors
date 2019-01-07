@@ -1,6 +1,7 @@
 {
   "description": "Common behaviors",
   "name": "etools-behaviors",
+  "version": "3.0.0",
   "devDependencies": {
     "@polymer/iron-component-page": "^3.0.0-pre.18",
     "@polymer/paper-styles": "^3.0.0-pre.18",
@@ -14,7 +15,6 @@
     "lint": "npm run lint:javascript && polymer lint && exit 0",
     "lint:javascript": "eslint . --ext js,html && exit 0"
   },
-  "version": "3.0.0",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",

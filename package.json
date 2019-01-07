@@ -1,7 +1,6 @@
 {
   "description": "Common behaviors",
   "name": "etools-behaviors",
-  "main": "etools-mixins.js",
   "devDependencies": {
     "@polymer/iron-component-page": "^3.0.0-pre.18",
     "@polymer/paper-styles": "^3.0.0-pre.18",

@@ -23,6 +23,9 @@ class PolymerMixinFactory {
 
 /**
  * Offers easier syntax for applying multiple mixins
+ *
+ * ```class EtoolsBehaviorsDemoHelper extends EtoolsMixinFactory.combineMixins([EtoolsLogsMixin], PolymerElement)```
+ *
  * @polymer
  * @mixinFunction
  * @demo demo/index.html

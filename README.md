@@ -37,8 +37,9 @@ A helper class to combine multiple mixins.
 App data cache reset mixin.
 
 ## Install
+TODO: create npm package
 ```bash
-$ bower install --save etools-behaviors
+$ npm i --save unicef-polymer/etools-behaviors#branch_name
 ```
 
 ## Linting the code
@@ -51,6 +52,8 @@ $ npm run lint
 ```
 
 ## Running Tests
+
+TODO: improve tests & add more tests
 
 You need to have `web-component-tester` installed (if not run `npm install -g web-component-tester`)
 ```bash

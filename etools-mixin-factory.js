@@ -23,5 +23,5 @@ class PolymerMixinFactory {
     return compositeMixin;
   }
 }
-const EtoolsMixinFactory = new PolymerMixinFactory();
-export default EtoolsMixinFactory;
+
+export const EtoolsMixinFactory = new PolymerMixinFactory();

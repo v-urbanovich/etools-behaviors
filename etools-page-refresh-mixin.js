@@ -1,12 +1,12 @@
 import {EtoolsLogsMixin} from './etools-logs-mixin.js';
 import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
-/*
+/**
  * Cached page data refresh helper functionality
  * @polymer
  * @mixinFunction
  * @applies EtoolsLogsMixin
  */
-export const EtoolsPageRefreshMixin = dedupingMixin(
+const EtoolsPageRefreshMixin = dedupingMixin(
     superClass => class extends EtoolsLogsMixin(superClass) {
 
   static get properties() {
@@ -61,11 +61,21 @@ export const EtoolsPageRefreshMixin = dedupingMixin(
   deleteDexieDb(dbName) {
     // eslint-disable-next-line no-undef
     let db = new Dexie(dbName);
+    let finished = false;
     db.delete().catch(function(err) {
       this.logError('Could not delete indexedDB: ' + dbName, 'etools-page-refresh-mixin', err, true);
     }.bind(this)).finally(function() {
       this.push('dbsAttemptedToDelete', dbName);
+      finished = true;
     }.bind(this));
+    // TODO: find a better solution for this timeout
+    // *In Edge - catch and finally of db.delete() are not executed,
+    //            when the site is opened in more than one tab
+    setTimeout(() => {
+      if (!finished) {
+        alert("Please close any other tabs, that have this page open, for the Refresh to work properly.");
+      }
+    }, 9000);
   }
 
   _refreshPage() {
@@ -92,3 +102,5 @@ export const EtoolsPageRefreshMixin = dedupingMixin(
   }
 
 });
+
+export default EtoolsPageRefreshMixin;

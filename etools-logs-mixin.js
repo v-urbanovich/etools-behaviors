@@ -19,11 +19,9 @@ import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
  *
  * @polymer
  * @mixinFunction
- * @demo demo/demo-logs.html
+ * @demo demo/index.html
  */
-
-let internalEtoolsLogsMixin = baseClass => class extends baseClass {
-
+const EtoolsLogsMixin = dedupingMixin(baseClass => class extends baseClass {
   static get properties() {
     return {
       /**
@@ -91,6 +89,6 @@ let internalEtoolsLogsMixin = baseClass => class extends baseClass {
       console.log(this._getEtoolsLogMessages('INFO', message, messagePrefix), other ? other : '');
     }
   }
-};
+});
 
-export const EtoolsLogsMixin = dedupingMixin(internalEtoolsLogsMixin);
+export default EtoolsLogsMixin;

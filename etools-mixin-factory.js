@@ -1,6 +1,3 @@
-/* Offers easier syntax for applying multiple mixins
-* @demo demo/demo-mixin-factory.html
-*/
 class PolymerMixinFactory {
   combineMixins(mixinsArray, superClass) {
     if (mixinsArray instanceof Array === false) {
@@ -24,4 +21,14 @@ class PolymerMixinFactory {
   }
 }
 
-export const EtoolsMixinFactory = new PolymerMixinFactory();
+/**
+ * Offers easier syntax for applying multiple mixins
+ *
+ * ```class EtoolsBehaviorsDemoHelper extends EtoolsMixinFactory.combineMixins([EtoolsLogsMixin], PolymerElement)```
+ *
+ * @polymer
+ * @mixinFunction
+ * @demo demo/index.html
+ */
+const EtoolsMixinFactory = new PolymerMixinFactory();
+export default EtoolsMixinFactory;

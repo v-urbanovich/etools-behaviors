@@ -1,6 +1,10 @@
 {
   "description": "Common behaviors",
   "name": "etools-behaviors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unicef-polymer/etools-behaviors"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.0",
@@ -22,7 +26,7 @@
     "type-detect": "1.0.0",
     "@webcomponents/webcomponentsjs": "2.0.0-beta.2"
   },
-  "license": "https://github.com/unicef-polymer/etools-behaviors/blob/master/LICENSE.md",
+  "license": "Apache-2.0",
   "dependencies": {
     "@polymer/paper-fab": "^3.0.0-pre.21",
     "@polymer/polymer": "^3.0.0"

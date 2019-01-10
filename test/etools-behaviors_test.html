@@ -6,8 +6,8 @@
 
     <title>etools-behaviors test</title>
 
-    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-    <script src="../../wct-browser-legacy/browser.js"></script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
 
     <script type="module" src="../demo/etools-behaviors-demo-helper.js"></script>
   </head>
@@ -19,13 +19,13 @@
     </test-fixture>
 
     <script type="module">
-import '../demo/etools-behaviors-demo-helper.js';
-suite('etools-behaviors', function() {
-  test('instantiating the element works', function() {
-    var element = fixture('basic');
-     assert.equal(element.is, 'etools-behaviors-demo-helper');
-  });
-});
-</script>
+      import '../demo/etools-behaviors-demo-helper.js';
+      suite('etools-behaviors', function() {
+        test('instantiating the element works', function() {
+          var element = fixture('basic');
+          assert.equal(element.is, 'etools-behaviors-demo-helper');
+        });
+      });
+    </script>
   </body>
 </html>

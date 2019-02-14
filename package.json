@@ -3,6 +3,7 @@
   "name": "etools-behaviors",
   "version": "3.0.0",
   "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.6.0",
     "@polymer/iron-component-page": "^3.0.0-pre.18",
     "@polymer/paper-styles": "^3.0.0-pre.18",
     "@webcomponents/webcomponentsjs": "^2.0.0",
@@ -13,7 +14,8 @@
   },
   "scripts": {
     "lint": "npm run lint:javascript && polymer lint && exit 0",
-    "lint:javascript": "eslint . --ext js,html && exit 0"
+    "lint:javascript": "eslint . --ext js,html && exit 0",
+    "gen-typings": "gen-typescript-declarations"
   },
   "resolutions": {
     "inherits": "2.0.3",
@@ -24,6 +26,8 @@
   },
   "license": "https://github.com/unicef-polymer/etools-behaviors/blob/master/LICENSE.md",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "source-map-support": "^0.5.10",
+    "dexie": "^2.0.4"
   }
 }

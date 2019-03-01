@@ -5,6 +5,7 @@
   "devDependencies": {
     "@polymer/iron-component-page": "^3.0.0-pre.18",
     "@polymer/paper-styles": "^3.0.0-pre.18",
+    "@polymer/gen-typescript-declarations": "^1.6.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.0",
@@ -13,7 +14,8 @@
   },
   "scripts": {
     "lint": "npm run lint:javascript && polymer lint && exit 0",
-    "lint:javascript": "eslint . --ext js,html && exit 0"
+    "lint:javascript": "eslint . --ext js,html && exit 0",
+    "gen-typings": "gen-typescript-declarations"
   },
   "resolutions": {
     "inherits": "2.0.3",

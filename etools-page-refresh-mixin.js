@@ -1,5 +1,6 @@
 import EtoolsLogsMixin from './etools-logs-mixin.js';
 import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
+import Dexie from 'dexie';
 /**
  * Cached page data refresh helper functionality
  * @polymer

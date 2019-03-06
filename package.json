@@ -15,7 +15,7 @@
   "scripts": {
     "lint": "npm run lint:javascript && polymer lint && exit 0",
     "lint:javascript": "eslint . --ext js,html && exit 0",
-    "gen-typings": "gen-typescript-declarations"
+    "gen-typings": "gen-typescript-declarations --deleteExisting --outDir './'"
   },
   "resolutions": {
     "inherits": "2.0.3",

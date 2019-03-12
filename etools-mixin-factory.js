@@ -1,14 +1,22 @@
-class PolymerMixinFactory {
-  combineMixins(mixinsArray, superClass) {
+/**
+ * Offers easier syntax for applying multiple mixins
+ *
+ * ```class EtoolsBehaviorsDemoHelper extends EtoolsMixinFactory.combineMixins([EtoolsLogsMixin], PolymerElement)```
+ *
+ * @polymer
+ * @demo demo/index.html
+ */
+export class EtoolsMixinFactory {
+  static combineMixins(mixinsArray, superClass) {
     if (mixinsArray instanceof Array === false) {
-      throw new Error('[PolymerMixinFactory] mixinsArray is not Array!');
+      throw new Error('[EtoolsMixinFactory] mixinsArray is not Array!');
     }
     // make sure the mixins are applied in the same order as defined in list
     mixinsArray.reverse();
     let compositeMixin = null;
     mixinsArray.forEach((m) => {
       if (!m) {
-        throw new Error('[PolymerMixinFactory] mixinsArray contains invalid mixins (null|undefined)!');
+        throw new Error('[EtoolsMixinFactory] mixinsArray contains invalid mixins (null|undefined)!');
       }
       if (!compositeMixin) {
         // start by using PolymerElement as mixins superClass
@@ -20,15 +28,3 @@ class PolymerMixinFactory {
     return compositeMixin;
   }
 }
-
-/**
- * Offers easier syntax for applying multiple mixins
- *
- * ```class EtoolsBehaviorsDemoHelper extends EtoolsMixinFactory.combineMixins([EtoolsLogsMixin], PolymerElement)```
- *
- * @polymer
- * @mixinFunction
- * @demo demo/index.html
- */
-const EtoolsMixinFactory = new PolymerMixinFactory();
-export default EtoolsMixinFactory;

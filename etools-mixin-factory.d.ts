@@ -12,23 +12,13 @@
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
 // tslint:disable:no-any describes the API as best we are able today
 
-declare class PolymerMixinFactory {
-  combineMixins(mixinsArray: any, superClass: any): any;
-}
-
+export {EtoolsMixinFactory};
 
 /**
  * Offers easier syntax for applying multiple mixins
  *
  * ```class EtoolsBehaviorsDemoHelper extends EtoolsMixinFactory.combineMixins([EtoolsLogsMixin], PolymerElement)```
  */
-declare function EtoolsMixinFactory<T extends new (...args: any[]) => {}>(base: T): T & EtoolsMixinFactoryConstructor;
-
-interface EtoolsMixinFactoryConstructor {
-  new(...args: any[]): EtoolsMixinFactory;
-}
-
-export {EtoolsMixinFactoryConstructor};
-
-interface EtoolsMixinFactory {
+declare class EtoolsMixinFactory {
+  static combineMixins(mixinsArray: any, superClass: any): any;
 }

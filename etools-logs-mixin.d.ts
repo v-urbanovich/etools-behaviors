@@ -22,7 +22,7 @@ interface Constructor<T = {}> {
  * To configure the logging level in your app config do this:
  * window.EtoolsLogsLevel = window.EtoolsLogsLevel || 'INFO';
  */
-declare function EtoolsLogsMixin(base: Constructor<PolymerElement>):
+declare function EtoolsLogsMixin<T extends Constructor<PolymerElement>>(base: T):
 {
   new (...args: any[]): {
     etoolsLogsLevel: string|null|undefined;
@@ -30,5 +30,5 @@ declare function EtoolsLogsMixin(base: Constructor<PolymerElement>):
     logWarn(message: any, messagePrefix?: any, other?: any, forceLevelInit?: any): void;
     logInfo(message: any, messagePrefix?: any, other?: any, forceLevelInit?: any): void;
   };
-} & Constructor<PolymerElement> ;
+} & T & Constructor<PolymerElement> ;
 

@@ -24,11 +24,13 @@ function _initAndGetLogLevel(forceLevelInit) {
   return etoolsLogsLevel;
 }
 
-function _getEtoolsLogMessages(logPrefix, message, messagePrefix, currentElementName) {
-  let msg = '[' + logPrefix + ']' + currentElementName;
+function _getEtoolsLogMessages(logLevel, message, messagePrefix) {
+  let msg = '[' + logLevel + ']';
+
   if (messagePrefix) {
     msg += '[' + messagePrefix.toString() + '] ';
   }
+
   msg += message;
   return msg;
 }
@@ -37,23 +39,23 @@ function _canLog(levels, forceLevelInit) {
   return levels.indexOf(_initAndGetLogLevel(forceLevelInit)) > -1;
 }
 
-export function logError(message, messagePrefix, other, forceLevelInit, currentElementName) {
+export function logError(message, messagePrefix, other, forceLevelInit) {
   if (_canLog(['ERROR', 'WARN', 'INFO'], forceLevelInit)) {
     // eslint-disable-next-line
-    console.error(_getEtoolsLogMessages('ERROR', message, messagePrefix, currentElementName), other ? other : '');
+    console.error(_getEtoolsLogMessages('ERROR', message, messagePrefix), other ? other : '');
   }
 }
 
-export function logWarn(message, messagePrefix, other, forceLevelInit, currentElementName) {
+export function logWarn(message, messagePrefix, other, forceLevelInit) {
   if (_canLog(['WARN', 'INFO'], forceLevelInit)) {
     // eslint-disable-next-line
-    console.warn(_getEtoolsLogMessages('WARN', message, messagePrefix, currentElementName), other ? other : '');
+    console.warn(_getEtoolsLogMessages('WARN', message, messagePrefix), other ? other : '');
   }
 }
 
-export function logInfo(message, messagePrefix, other, forceLevelInit, currentElementName) {
+export function logInfo(message, messagePrefix, other, forceLevelInit) {
   if (_canLog(['INFO'], forceLevelInit)) {
     // eslint-disable-next-line
-    console.log(_getEtoolsLogMessages('INFO', message, messagePrefix, currentElementName), other ? other : '');
+    console.log(_getEtoolsLogMessages('INFO', message, messagePrefix), other ? other : '');
   }
 }

@@ -1,8 +1,12 @@
 {
-  "description": "Common behaviors",
+  "description": "Common behaviors, mixins, modules",
   "name": "@unicef-polymer/etools-behaviors",
-  "version": "3.0.0",
+  "version": "3.0.0-rc.1",
   "homepage": "https://github.com/unicef-polymer/etools-behaviors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unicef-polymer/etools-behaviors.git"
+  },
   "devDependencies": {
     "@polymer/iron-component-page": "^4.0.0",
     "@polymer/paper-styles": "^3.0.0-pre.18",

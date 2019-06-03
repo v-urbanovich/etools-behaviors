@@ -1,9 +1,9 @@
 {
   "description": "Common behaviors",
-  "name": "etools-utils",
+  "name": "@unicef-polymer/etools-behaviors",
   "version": "3.0.0",
   "devDependencies": {
-    "@polymer/iron-component-page": "^3.0.0-pre.18",
+    "@polymer/iron-component-page": "^4.0.0",
     "@polymer/paper-styles": "^3.0.0-pre.18",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "eslint": "^3.19.0",

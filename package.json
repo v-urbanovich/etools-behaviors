@@ -1,6 +1,6 @@
 {
   "description": "Common behaviors",
-  "name": "etools-behaviors",
+  "name": "etools-utils",
   "version": "3.0.0",
   "devDependencies": {
     "@polymer/iron-component-page": "^3.0.0-pre.18",

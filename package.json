@@ -1,24 +1,11 @@
 {
   "description": "Common behaviors, mixins, modules",
   "name": "@unicef-polymer/etools-behaviors",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "homepage": "https://github.com/unicef-polymer/etools-behaviors",
   "repository": {
     "type": "git",
     "url": "https://github.com/unicef-polymer/etools-behaviors.git"
-  },
-  "devDependencies": {
-    "@polymer/iron-component-page": "^4.0.0",
-    "@polymer/paper-styles": "^3.0.1",
-    "@webcomponents/webcomponentsjs": "^2.4.3",
-    "eslint": "^7.1.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-html": "^6.0.2",
-    "wct-browser-legacy": "^1.0.2",
-    "acorn": ">=7.1.1",
-    "diff": ">=3.5.0",
-    "growl": ">=1.10.0",
-    "minimist": ">=0.2.1"
   },
   "scripts": {
     "lint": "npm run lint:javascript && polymer lint && exit 0",
@@ -36,6 +23,20 @@
     "@polymer/polymer": "^3.4.1",
     "source-map-support": "^0.5.10",
     "dexie": "^3.0.1"
+  },
+  "devDependencies": {
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/paper-styles": "^3.0.1",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "eslint": "^7.1.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-html": "^6.0.2",
+    "wct-browser-legacy": "^1.0.2",
+    "acorn": ">=7.1.1",
+    "diff": ">=3.5.0",
+    "growl": ">=1.10.0",
+    "minimist": ">=0.2.1",
+    "lodash": ">=4.17.19"
   },
   "publishConfig": {
     "access": "public"

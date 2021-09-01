@@ -1,5 +1,5 @@
 
- /**
+/**
    * Available log levels:
    *    OFF
    *    ERROR
@@ -9,7 +9,7 @@
 let etoolsLogsLevel = '';
 
 function _getLogLevel() {
-  let availableLogLevels = ['OFF', 'ERROR', 'WARN', 'INFO'];
+  const availableLogLevels = ['OFF', 'ERROR', 'WARN', 'INFO'];
   if (window.EtoolsLogsLevel && availableLogLevels.indexOf(window.EtoolsLogsLevel) === -1) {
     // wrong log level set
     return 'OFF';
